@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <conio.h>
+int main(void){
+	
+	int num1,sabit,sabit2;
+	sabit = 0;
+	printf("Gideceginiz yerin numarasini giriniz.");
+	scanf("%d",&num1);
+	
+	while(num1 !=-1 && num1<=5){    // 5'e küçük eşit yaptım çünkü bina 5 katlı. -1 de sistemi kapatmak istiyorsak -1 e basmamız gerekiyor döngü bitsin diye.
+		
+		if(num1>sabit){
+			sabit2=num1;  //for döngündeki num1 değerini değiştirmemek için onun yerini tutan bir sabit eşitliyoruz ki i<=num1-sabit ifadesinde sıkıntı oluşmasın.
+			
+			for(int i = 1; i<=num1-sabit;i++){
+				sabit2++;
+				printf("%d. kata hosgeldiniz\n",sabit2-num1+sabit);
+				
+			}
+		}
+		else{
+			for(int i = sabit-num1; i>=1;i--){
+				sabit--;
+				printf("%d. kata hosgeldiniz\n",sabit);
+					
+			}
+			
+		}
+			sabit = num1;  // en son girilen kat numarasını hafızada tutuyor
+			printf("Yeni gidilcek yeri giriniz:");
+			
+			scanf("%d",&num1);
+	}
+	
+}
