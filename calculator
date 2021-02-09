@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <conio.h>
+
+int calc(int a);
+int sum(int a,int b);
+int extract(int a,int b);
+int product(int a,int b);
+int division(int a,int b);
+int main(void){
+	printf("for sum enter 1, for extract enter 2, for product enter 3, for division enter 4 ");
+	int a; // a is a type of calculation
+	scanf("%d",&a);
+	printf("%d",calc(a));
+
+	
+}
+
+int calc(int a){
+	int num1,num2;
+	printf("Enter 2 numbers:");
+	scanf("%d%d",&num1,&num2);
+	switch(a){
+		case 1:
+			sum(num1,num2);
+			break;
+		case 2:
+			extract(num1,num2);
+			break;
+		case 3:
+			product(num1,num2);
+			break;
+		case 4:
+			division(num1,num2);
+			break;
+		default:
+		printf("Wrong number");
+		break;				
+	}
+}
+int sum (int a, int b){
+	return a+b;
+}
+int extract (int a, int b){
+	return a-b;
+}
+int product (int a, int b){
+	return a*b;
+}
+int division (int a, int b){
+
+	return a/b;
+}
